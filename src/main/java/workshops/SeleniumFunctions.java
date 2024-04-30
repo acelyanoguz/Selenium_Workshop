@@ -46,7 +46,7 @@ public class SeleniumFunctions {
         //Örneğin, bir elementin id, class, href, value gibi özniteliklerinin değerlerini almak için getAttribute() fonksiyonunu kullanabilirsiniz.
         //Bu örnekte,tüm <input> elementlerinin value özniteliğinin değerini almak için kullanılmıştır.
         for(WebElement input:inputs){
-            System.out.println("input text i: "+ input.getAttribute("value")); //HATA
+            System.out.println("input text i: "+ input.getAttribute("value"));
         }
 
 
@@ -69,6 +69,7 @@ public class SeleniumFunctions {
         Boolean isDisplayed=logo.isDisplayed();
         System.out.println("Logo gözüküyor mu: "+isDisplayed);
 
+        //Web driver i kapatma
         webDriver.quit();
     }
 }
