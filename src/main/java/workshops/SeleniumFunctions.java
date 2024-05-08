@@ -69,6 +69,7 @@ public class SeleniumFunctions {
         Boolean isDisplayed=logo.isDisplayed();
         System.out.println("Logo gözüküyor mu: "+isDisplayed);
 
+        //Web driver i kapatma
         webDriver.quit();
     }
 }
