@@ -12,7 +12,7 @@ public class SeleniumFunctions {
         WebDriver webDriver= new ChromeDriver();
         //1-)Selenium WebDriver: tarayıcıların kontrolünü sağlar.
         //Tarayıcılar arası uyumluluk için farklı sürücüler sağlar (ChromeDriver, FirefoxDriver, vb.).
-        webDriver.navigate().to("https://www.saucedemo.com/v1/");
+        webDriver.navigate().to(GlobalConstants.BASE_URL);
 
         //2-)getTitle() fonksiyonu: WebDriver aracılığıyla açık olan tarayıcının başlık(title) metnini döndürür.
         //Bu fonksiyon herhangi bir parametre almaz çünkü sadece mevcut tarayıcının başlığını döndürür.
@@ -23,7 +23,7 @@ public class SeleniumFunctions {
         //Bu elementlere tıklama, metin yazma, değer alma gibi işlemleri gerçekleştirmek için kullanılır.
         //4-)findElement: Belirli bir HTML elementini bulmak için kullanılır.
         // Bu metod, bir CSS selektörü veya XPath ifadesi kullanarak elementleri bulabilir.
-        WebElement usernameInput=webDriver.findElement(By.id("user-name"));
+        WebElement usernameInput=webDriver.findElement(By.id(GlobalConstants.USERNAME));
 
         //5-)sendKeys(): Bir WebElement'e metin göndermek için kullanılır.
         //Özellikle form alanlarına metin yazmak için kullanılır.
@@ -33,7 +33,7 @@ public class SeleniumFunctions {
 
         //6-)click fonksiyonu, bir WebElement'e tıklamak için kullanılır ve herhangi bir parametre almaz.
         //Bu fonksiyon, sadece belirtilen WebElement'e tıklar ve herhangi bir dönüş değeri yoktur.
-        WebElement loginBtn=webDriver.findElement(By.id("login-button"));
+        WebElement loginBtn=webDriver.findElement(By.id(GlobalConstants.LOGIN_BTN));
         loginBtn.click();
 
         //7-) findElements() fonksiyonu, WebDriver aracılığıyla bir web sayfasındaki belirli
@@ -46,7 +46,7 @@ public class SeleniumFunctions {
         //Örneğin, bir elementin id, class, href, value gibi özniteliklerinin değerlerini almak için getAttribute() fonksiyonunu kullanabilirsiniz.
         //Bu örnekte,tüm <input> elementlerinin value özniteliğinin değerini almak için kullanılmıştır.
         for(WebElement input:inputs){
-            System.out.println("input text i: "+ input.getAttribute("value")); //HATA
+            System.out.println("input text i: "+ input.getAttribute("value"));
         }
 
 
@@ -65,7 +65,7 @@ public class SeleniumFunctions {
         //11-) isDisplayed(): Bir WebElement'in görüntülenip görüntülenmediğini kontrol etmek için kullanılır.
         //Bu fonksiyonun herhangi bir parametresi yoktur. True veya false değeri döndürür.
 
-        WebElement logo=webDriver.findElement(By.className("login_logo"));
+        WebElement logo=webDriver.findElement(By.className(GlobalConstants.LOGIN_LOGO));
         Boolean isDisplayed=logo.isDisplayed();
         System.out.println("Logo gözüküyor mu: "+isDisplayed);
 
